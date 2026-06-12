@@ -1,5 +1,5 @@
-﻿streamlit
+streamlit>=1.46,<2
 ephem==4.1.5
-timezonefinder==6.5.2
-matplotlib
-pytz
+timezonefinder>=8.2.4,<9
+matplotlib>=3.8,<4
+pytz>=2024.1
