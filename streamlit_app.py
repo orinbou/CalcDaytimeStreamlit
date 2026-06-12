@@ -113,6 +113,7 @@ x_ss_datetimes: list[datetime.datetime] = []
 
 sun = ephem.Sun()
 today_info = None
+skipped_dates: list[str] = []
 
 for i in range(366):
     naive_date = datetime.datetime(year=start_year, month=1, day=1, hour=12) + datetime.timedelta(days=i)
@@ -122,8 +123,12 @@ for i in range(366):
         date_local = tz.localize(naive_date, is_dst=None)
 
     point.date = date_local.astimezone(timezone("UTC"))
-    dt1local = ephem.localtime(point.previous_rising(sun)).astimezone(tz)
-    dt2local = ephem.localtime(point.next_setting(sun)).astimezone(tz)
+    try:
+        dt1local = ephem.localtime(point.previous_rising(sun)).astimezone(tz)
+        dt2local = ephem.localtime(point.next_setting(sun)).astimezone(tz)
+    except (ephem.NeverUpError, ephem.AlwaysUpError):
+        skipped_dates.append(date_local.strftime(SF_YMD))
+        continue
 
     day = (dt2local - dt1local).total_seconds() / 3600
 
@@ -160,6 +165,16 @@ for i in range(366):
         )
 
 st.markdown("## 概要情報")
+if skipped_dates:
+    st.warning(
+        "この地点では日の出/日の入りが発生しない日があるため、"
+        f"{len(skipped_dates)}日分を除外して表示しています。"
+    )
+
+if not y_daytimes:
+    st.error("指定した地点では計算可能な日の出/日の入りデータが取得できませんでした。")
+    st.stop()
+
 if today_info:
     st.write(today_info)
 

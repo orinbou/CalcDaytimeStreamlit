@@ -7,6 +7,8 @@
 このリポジトリは、もともと Mercury Cloud 向けに作成したアプリを、Streamlit で実行できるように移行したものです。  
 `PyEphem` による天文計算と `matplotlib` のグラフ表示で、指定した緯度・経度における年間の日照情報を確認できます。
 
+公開中のアプリ: `https://calcdaytime.streamlit.app/?lat=35.4500&lon=139.6500`
+
 ![image](assets/SampleAppImage.jpg)
 
 ## 主な機能
@@ -29,7 +31,7 @@ pip install -r requirements.txt
 2. Streamlit アプリを起動します。
 
 ```bash
-streamlit run sample.py
+streamlit run streamlit_app.py
 ```
 
 起動後、通常は `http://localhost:8501` でアクセスできます。
@@ -48,7 +50,7 @@ streamlit run sample.py
 
 ## ファイル構成
 
-- [sample.py](sample.py): Streamlit アプリ本体
+- [streamlit_app.py](streamlit_app.py): Streamlit アプリ本体
 - [requirements.txt](requirements.txt): Streamlit 版の依存パッケージ
 - [mercury/sample.ipynb](mercury/sample.ipynb): Mercury 版の元ノートブック
 - [mercury/requirements.txt](mercury/requirements.txt): Mercury 版の依存パッケージ
