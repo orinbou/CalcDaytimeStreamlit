@@ -7,7 +7,9 @@
 このリポジトリは、もともと Mercury Cloud 向けに作成したアプリを、Streamlit で実行できるように移行したものです。  
 `PyEphem` による天文計算と `matplotlib` のグラフ表示で、指定した緯度・経度における年間の日照情報を確認できます。
 
-公開中のアプリ: `https://calcdaytime.streamlit.app/?lat=35.4500&lon=139.6500`
+サンプルアプリのURLは次のとおりです。
+
+https://calcdaytime.streamlit.app/
 
 ![image](assets/SampleAppImage.jpg)
 
@@ -47,6 +49,33 @@ streamlit run streamlit_app.py
 - 東京: `http://localhost:8501/?lat=35.6812&lon=139.7671`
 - 札幌: `http://localhost:8501/?lat=43.0642&lon=141.3469`
 - グリニッジ天文台: `http://localhost:8501/?lat=51.4769&lon=-0.0005`
+
+## 🗺位置
+
+### デフォルト
+
+#### 横浜（神奈川）@国立天文台
+
+https://calcdaytime.streamlit.app
+
+### カスタム位置
+
+#### 🗾国内
+
+| 地域     | リンク                                                                  |
+| ------ | -------------------------------------------------------------------- |
+| 東京     | <https://calcdaytime.streamlit.app?lat=35.6812&lon=139.7671> |
+| 札幌     | <https://calcdaytime.streamlit.app?lat=43.0642&lon=141.3469> |
+| 沖縄（那覇） | <https://calcdaytime.streamlit.app?lat=26.2124&lon=127.6809> |
+
+#### 🌏海外
+
+| 地域         | リンク                                                                   |
+| ---------- | --------------------------------------------------------------------- |
+| グリニッジ天文台   | <https://calcdaytime.streamlit.app?lat=51.4769&lon=-0.0005>   |
+| ワシントンDC    | <https://calcdaytime.streamlit.app?lat=38.9072&lon=-77.0369>  |
+| メルボルン      | <https://calcdaytime.streamlit.app?lat=-37.8136&lon=144.9631> |
+| チクラーヨ（ペルー） | <https://calcdaytime.streamlit.app?lat=-6.7714&lon=-79.8411>  |
 
 ## ファイル構成
 
