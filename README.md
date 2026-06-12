@@ -9,7 +9,7 @@
 
 サンプルアプリのURLは次のとおりです。
 
-https://calcdaytime.streamlit.app/
+https://calcdaytime.streamlit.app
 
 ![image](assets/SampleAppImage.jpg)
 
