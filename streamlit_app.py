@@ -14,7 +14,7 @@ SF_YMD = "%Y-%m-%d"
 SF_HMS = "%H:%M:%S"
 
 
-st.set_page_config(page_title="CalcDaytime", layout="wide")
+st.set_page_config(page_title="CalcDaytime", page_icon="assets/favicon.png", layout="wide")
 st.title("CalcDaytime")
 st.caption("Calculate daytime length all through the year")
 
