@@ -14,6 +14,8 @@ SF_HMS = "%H:%M:%S"
 
 # オリジナルfaviconを設置
 st.set_page_config(page_title="CalcDaytime", page_icon="assets/favicon.png", layout="wide")
+# ライトテーマを強制（背景色は白に固定）
+st.set_page_config(theme="light")
 
 def get_query_param(key: str, default: str) -> str:
     try:
