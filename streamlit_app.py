@@ -9,15 +9,11 @@ from pytz import exceptions as pytz_exc
 from pytz import timezone
 from timezonefinder import TimezoneFinder
 
-
 SF_YMD = "%Y-%m-%d"
 SF_HMS = "%H:%M:%S"
 
-
 st.set_page_config(page_title="CalcDaytime", page_icon="assets/favicon.png", layout="wide")
-st.title("CalcDaytime")
 st.caption("Calculate daytime length all through the year")
-
 
 def get_query_param(key: str, default: str) -> str:
     try:
@@ -65,7 +61,8 @@ lat_default = get_query_param("lat", "35.4500")
 lon_default = get_query_param("lon", "139.6500")
 
 with st.sidebar:
-    st.markdown("### 入力")
+    st.title("CalcDaytime")
+    st.markdown("## CalcDaytime")
     lat = st.text_input("緯度", value=lat_default)
     lon = st.text_input("経度", value=lon_default)
     st.info("Python の天文計算ライブラリ PyEphem を使用して日の出/日の入を計算します。")
@@ -81,7 +78,6 @@ except ValueError:
     st.error("緯度・経度は数値で入力してください。")
     st.stop()
 
-st.header("計算結果")
 st.markdown("## 入力情報")
 st.write(f"位置情報: (緯度, 経度) = ({lat}, {lon})")
 
