@@ -62,7 +62,7 @@ lon_default = get_query_param("lon", "139.6500")
 
 with st.sidebar:
     st.title("CalcDaytime")
-    st.caption("powered by Streamlit")
+    st.caption("Powered by Streamlit")
     lat = st.text_input("緯度", value=lat_default)
     lon = st.text_input("経度", value=lon_default)
     st.info("Python の天文計算ライブラリ PyEphem を使用して日の出/日の入を計算します。")
