@@ -12,9 +12,6 @@ from timezonefinder import TimezoneFinder
 SF_YMD = "%Y-%m-%d"
 SF_HMS = "%H:%M:%S"
 
-st.set_page_config(page_title="CalcDaytime", page_icon="assets/favicon.png", layout="wide")
-st.caption("Calculate daytime length all through the year")
-
 def get_query_param(key: str, default: str) -> str:
     try:
         value = st.query_params.get(key, default)
@@ -62,7 +59,8 @@ lon_default = get_query_param("lon", "139.6500")
 
 with st.sidebar:
     st.title("CalcDaytime")
-    st.markdown("## CalcDaytime")
+    st.set_page_config(page_title="CalcDaytime", page_icon="assets/favicon.png", layout="wide")
+    st.caption("Calculate daytime length all through the year")
     lat = st.text_input("緯度", value=lat_default)
     lon = st.text_input("経度", value=lon_default)
     st.info("Python の天文計算ライブラリ PyEphem を使用して日の出/日の入を計算します。")
